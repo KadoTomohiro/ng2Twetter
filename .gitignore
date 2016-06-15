@@ -4,3 +4,4 @@ typings.json
 *.js
 *.js.map
 .idea/
+config/default.json

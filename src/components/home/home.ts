@@ -8,8 +8,9 @@ import {BUTTON_DIRECTIVES} from 'ng2-bootstrap';
     selector: 'my-app',
     directives: [],
     template: `
-  <h1>{{name}} Hello!</h1>
+  <h1>{{Twitter}} Hello!</h1>
   <div *ngFor="let result of results">
+    <img src="{{result.user.profile_image_url}}" alt="">
     {{result.user.name}}: {{result.text}}
   </div>
   `,
