@@ -19,6 +19,7 @@ app.use(function(req, res, next) {
 server.listen(port, () => console.log('Express server listening on %d, in %s mode', port, app.get('env')));
 
 // API definition
-require('./api/sed/sed')(app);
+require('./api/demo/demo')(app);
+require('./api/twitter/twitter')(app);
 
 exports = module.exports = app;
