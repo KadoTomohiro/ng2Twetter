@@ -5,14 +5,21 @@ const config = require('config');
 
 var client = new twitter(config.get('twitter_keys'));
 
+var cache;
 exports = module.exports = function (app) {
     app.get('/api/twitter/', (req, res) => {
 
-        client.get('statuses/home_timeline', function (error, tweets, response) {
+        if (cache) {
+            res.jsonp(cache);
+            return;
+        }
+
+        client.get('statuses/home_timeline', function (error, tweets) {
             if (error) throw error;
             console.log(tweets);  // The favorites.
             //console.log(response);  // Raw response object.
-            res.jsonp(tweets);
+            cache = tweets;
+            res.jsonp(cache);
         });
     });
 };

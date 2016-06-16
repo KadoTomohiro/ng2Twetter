@@ -4,3 +4,5 @@ typings
 *.js.map
 .idea/
 config/default.json
+sandbox/
+npm-debug.log.*

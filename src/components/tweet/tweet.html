@@ -1,0 +1,39 @@
+<div class="panel panel-default media">
+  <div class="media-left">
+    <img class="media-object" src="{{data.user.profile_image_url}}" alt="{{data.user.name}}">
+  </div>
+
+  <div class="media-body">
+    <h4 class="media-heading">{{data.user.name}}</h4>
+    <div *ngIf="!data.retweeted_status">
+      <p class="lead">{{data.text}}</p>
+      <div *ngIf="data.extended_entities">
+        <div *ngFor="let media of data.extended_entities.media">
+          <a (click)="lgModal.show()">
+            <img src="{{media.media_url}}:thumb" alt="" *ngIf="media.type !== 'videos'">
+            <video src="{{media.media_url}}:thumb" *ngIf="media.type === 'videos'"></video>
+          </a>
+          <div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"
+               aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" (click)="lgModal.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                  <h4 class="modal-title">Large modal</h4>
+                </div>
+                <div class="modal-body">
+                  <img src="{{media.media_url}}" alt="" *ngIf="media.type !== 'videos'">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <tweet *ngIf="data.retweeted_status" [data]="data.retweeted_status"></tweet>
+  </div>
+
+</div>
+
