@@ -6,6 +6,7 @@ System.config({
         '@angular': 'node_modules/@angular',
         'rxjs': 'node_modules/rxjs',
         'scripts/main': 'scripts/main.js',
+        'scripts/main.routes': 'scripts/main.routes.js',
         'ng2-bootstrap': 'node_modules/ng2-bootstrap',
         'moment': 'node_modules/moment/moment.js'
     },
@@ -16,6 +17,7 @@ System.config({
         '@angular/http': {main: 'index'},
         '@angular/platform-browser': {main: 'index'},
         '@angular/platform-browser-dynamic': {main: 'index'},
+        '@angular/router': {main: 'index'},
 
         // Thirdparty barrels.
         'rxjs': {main: 'Rx'},

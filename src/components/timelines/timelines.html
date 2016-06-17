@@ -1,0 +1,5 @@
+<div *ngFor="let result of results">
+  <div (click)=toDetail(result.id)>
+    <tweet [data]="result"></tweet>
+  </div>
+</div>
