@@ -26,3 +26,14 @@ $ npm install
 ```bash
 $ npm start
 ```
+
+## やってみたこと
+
+* Angular2 rc2
+* Angular2 RouterV3 alpha-6
+* ng2-bootstrap
+* Twitter API coll from node/express
+* create service
+* create component
+* nest component
+* array search by Rxjs
