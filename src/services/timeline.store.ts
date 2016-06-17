@@ -1,4 +1,6 @@
 import {Injectable} from '@angular/core';
+import * as Rx from 'rxjs/Rx'
+
 @Injectable()
 export class TimelineStore {
     private cache:any;
@@ -15,13 +17,9 @@ export class TimelineStore {
     }
 
     public getTweet(id) {
-        let tweet;
-        this.cache.some(item => {
-            if (item.id === id) {
-                tweet = item;
-                return true;
-            }
-        });
-        return tweet;
+        return Rx.Observable
+            .from(this.cache)
+            .filter((tweet:any) => tweet.id === id)
+            .map(tweet => tweet);
     }
 }

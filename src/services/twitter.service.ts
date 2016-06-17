@@ -7,12 +7,10 @@ import {Http, URLSearchParams} from '@angular/http';
 @Injectable()
 export class TwitterService {
     private url:string = 'http://localhost:8000/api/twitter/';
-    private http:Http;
     private params:URLSearchParams;
 
 
-    constructor(http:Http) {
-        this.http = http;
+    constructor(private http:Http) {
         this.params = new URLSearchParams();
     }
 

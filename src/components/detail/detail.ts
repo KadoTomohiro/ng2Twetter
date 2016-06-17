@@ -1,5 +1,5 @@
 import {Component} from '@angular/core'
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute} from '@angular/router';
 import {TweetComponent} from '../tweet/tweet'
 import {TimelineStore} from '../../services/timeline.store'
 
@@ -20,7 +20,9 @@ export class DetailComponent {
         this.route.params
             .subscribe(params => {
                 let id = params['id'];
-                this.tweet = this.store.getTweet(id);
+
+                this.store.getTweet(id)
+                    .subscribe(tweet => this.tweet = tweet);
             })
     }
 }

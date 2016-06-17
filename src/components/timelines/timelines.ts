@@ -10,12 +10,10 @@ import {TimelineStore} from '../../services/timeline.store'
 })
 export class TimelinesComponent {
 
-    store:TimelineStore;
     results:any;
 
-    constructor(store:TimelineStore, private router:Router) {
-        this.store = store;
-        this.results = store.getTimeline();
+    constructor(private store:TimelineStore, private router:Router) {
+        this.results = this.store.getTimeline();
     }
 
     toDetail(id) {
