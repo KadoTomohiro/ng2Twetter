@@ -32,8 +32,8 @@ $ npm start
 * Angular2 rc2
 * Angular2 RouterV3 alpha-6
 * ng2-bootstrap
-* Twitter API coll from node/express
-* create service
-* create component
-* nest component
-* array search by Rxjs
+* node/express経由でのTwitterAPI呼び出し
+* service作成
+* component作成
+* componentのネスト
+* Rxjsでの配列検索
